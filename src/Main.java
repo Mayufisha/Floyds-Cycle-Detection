@@ -6,7 +6,7 @@ public class Main {
             list.add(i);
         }
 
-        list.createCycle(3);
+        list.createCycle(2);
         list.printGraphList();
 
         System.out.println("Has cycle: " + list.hasCycle());
