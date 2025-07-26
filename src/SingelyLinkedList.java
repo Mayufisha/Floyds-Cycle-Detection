@@ -21,4 +21,18 @@ public class SingelyLinkedList {
             curr.next = new Node(value);
         }
     }
+    public boolean hasCycle() {
+        Node tortoise = head;
+        Node hare = head;
+
+        while (hare != null && hare.next != null) {
+            tortoise = tortoise.next;
+            hare = hare.next.next;
+
+            if (tortoise == hare) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
