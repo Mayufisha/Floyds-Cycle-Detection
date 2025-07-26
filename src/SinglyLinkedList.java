@@ -67,7 +67,7 @@ public class SinglyLinkedList {
                     tortoise = tortoise.next;
                     hare = hare.next;
                 }
-                return tortoise; /
+                return tortoise;
             }
         }
         return null;
