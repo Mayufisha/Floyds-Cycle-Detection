@@ -7,6 +7,7 @@ public class Main {
         }
 
         list.createCycle(3);
+        list.printGraphList();
 
         System.out.println("Has cycle: " + list.hasCycle());
 

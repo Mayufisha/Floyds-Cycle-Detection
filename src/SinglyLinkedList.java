@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class SinglyLinkedList {
     static class Node {
         int value;
@@ -72,4 +75,24 @@ public class SinglyLinkedList {
         }
         return null;
     }
+    public void printGraphList() {
+        Set<Node> visited = new HashSet<>();
+        Node current = head;
+
+        while (current != null) {
+            System.out.print(current.value);
+
+            if (visited.contains(current.next)) {
+                System.out.print(" -> " + current.next.value + " (cycle starts here)");
+                break;
+            }
+
+            visited.add(current);
+            current = current.next;
+
+            if (current != null) System.out.print(" -> ");
+        }
+        System.out.println();
+    }
+
 }
