@@ -1,4 +1,4 @@
-public class SingelyLinkedList {
+public class SinglyLinkedList {
     static class Node {
         int value;
         Node next;
@@ -51,5 +51,25 @@ public class SingelyLinkedList {
         if (cycleStart != null) {
             tail.next = cycleStart;
         }
+    }
+    public Node getCycleStart() {
+        Node tortoise = head;
+        Node hare = head;
+
+        // First, detect cycle
+        while (hare != null && hare.next != null) {
+            tortoise = tortoise.next;
+            hare = hare.next.next;
+
+            if (tortoise == hare) {
+                tortoise = head;
+                while (tortoise != hare) {
+                    tortoise = tortoise.next;
+                    hare = hare.next;
+                }
+                return tortoise; /
+            }
+        }
+        return null;
     }
 }
