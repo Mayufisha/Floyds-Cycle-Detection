@@ -35,4 +35,21 @@ public class SingelyLinkedList {
         }
         return false;
     }
+    public void createCycle(int pos) {
+        if (pos < 0) return;
+
+        Node tail = head, cycleStart = null;
+        int idx = 0;
+
+        while (tail.next != null) {
+            if (idx == pos) {
+                cycleStart = tail;
+            }
+            tail = tail.next;
+            idx++;
+        }
+        if (cycleStart != null) {
+            tail.next = cycleStart;
+        }
+    }
 }
